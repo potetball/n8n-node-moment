@@ -1,0 +1,18 @@
+{
+	"node": "n8n-nodes-moment",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Productivity", "Finance"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://app.moment.team/api/1.0/"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://app.moment.team/api/1.0/"
+			}
+		]
+	}
+}
