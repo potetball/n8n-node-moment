@@ -21,9 +21,19 @@ export async function momentApiRequest(
 	body?: IDataObject,
 	qs?: IDataObject,
 ): Promise<IDataObject | IDataObject[] | string> {
+	const credentials = await this.getCredentials('momentApi');
+	const company = credentials.company;
+
+	if (typeof company !== 'string' || company.trim() === '') {
+		throw new Error('Moment credentials are missing the company value');
+	}
+
 	const options: IHttpRequestOptions = {
 		method,
-		url: resource,
+		url: `https://app.moment.team/api/1.0/companies/${encodeURIComponent(company)}/${resource.replace(
+			/^\//,
+			'',
+		)}`,
 		json: true,
 	};
 
